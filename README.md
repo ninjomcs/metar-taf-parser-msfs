@@ -1,5 +1,7 @@
 # ✈️ [metar-taf-parser](https://aeharding.github.io/metar-taf-parser)
 
+This fork enables use in Coherent GT (MSFS)
+
 Parser for METeorological Aerodrome Reports (METARs) and Terminal Aerodrome Forecasts (TAFs). This is a port of [python-metar-taf-parser](https://github.com/mivek/python-metar-taf-parser) to Typescript with some additional features.
 
 [Check out the demo here](https://aeharding.github.io/metar-taf-parser)

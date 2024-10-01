@@ -1,8 +1,8 @@
 {
   "name": "@ninjomcs/metar-taf-parser-msfs",
-  "version": "9.0.2",
+  "version": "9.0.3",
   "description": "Parse METAR and TAF reports",
-  "homepage": "https://aeharding.github.io/metar-taf-parser",
+  "homepage": "https://github.com/ninjomcs/metar-taf-parser-msfs",
   "packageManager": "pnpm@9.0.6+sha256.0624e30eff866cdeb363b15061bdb7fd9425b17bc1bb42c22f5f4efdea21f6b3",
   "keywords": [
     "aviation",
