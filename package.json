@@ -1,5 +1,5 @@
 {
-  "name": "metar-taf-parser-msfs",
+  "name": "@ninjomcs/metar-taf-parser-msfs",
   "version": "9.0.2",
   "description": "Parse METAR and TAF reports",
   "homepage": "https://aeharding.github.io/metar-taf-parser",
@@ -22,7 +22,7 @@
     "url": "https://github.com/aeharding/metar-taf-parser.git"
   },
   "scripts": {
-    "clean": "rimraf dist locale metar-taf-parser.*",
+    "clean": "rimraf --glob dist locale metar-taf-parser.*",
     "build": "pnpm clean && rollup -c rollup.config.ts --configPlugin typescript && cp -R dist/locale/. locale/ && cp dist/metar-taf-parser.js metar-taf-parser.js && pnpm clean:after",
     "clean:after": "rimraf dist",
     "start": "rollup -c rollup.config.ts -w --configPlugin typescript",
