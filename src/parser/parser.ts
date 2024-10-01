@@ -160,7 +160,7 @@ export abstract class AbstractParser {
   BECMG = "BECMG";
   RMK = "RMK";
 
-  static #TOKENIZE_REGEX = /\s((?=\d\/\dSM)(?<!\s(P|M)?\d\s)|(?!\d\/\dSM))|=/;
+  static #TOKENIZE_REGEX = new RegExp();
   static #INTENSITY_REGEX = /^(-|\+|VC)/;
   static #CAVOK = "CAVOK";
   static #commonSupplier = new CommandSupplier();
