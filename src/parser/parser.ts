@@ -227,7 +227,23 @@ export abstract class AbstractParser {
    * @returns List of tokens
    */
   tokenize(input: string) {
-    return input.split(AbstractParser.#TOKENIZE_REGEX).filter((v) => v);
+    const arr = input.split(" ");
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].includes("SM")) {
+            const prev = arr[i - 1];
+            if (prev.length === 1) {
+                arr[i] = prev + " " + arr[i];
+                arr.splice(i - 1, 1);
+            }
+        }
+
+        if (arr[i].endsWith("=")) {
+            arr[i] = arr[i].slice(0, -1);
+        }
+    }
+
+    return arr;
   }
 
   /**
