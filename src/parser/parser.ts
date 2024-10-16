@@ -160,7 +160,6 @@ export abstract class AbstractParser {
   BECMG = "BECMG";
   RMK = "RMK";
 
-  static #TOKENIZE_REGEX = new RegExp();
   static #INTENSITY_REGEX = /^(-|\+|VC)/;
   static #CAVOK = "CAVOK";
   static #commonSupplier = new CommandSupplier();
@@ -230,17 +229,17 @@ export abstract class AbstractParser {
     const arr = input.split(" ");
 
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].includes("SM")) {
-            const prev = arr[i - 1];
-            if (prev.length === 1) {
-                arr[i] = prev + " " + arr[i];
-                arr.splice(i - 1, 1);
-            }
+      if (arr[i].endsWith("SM") && i > 0) {
+        const prev = arr[i - 1];
+        if (prev.length === 1) {
+          arr[i] = prev + " " + arr[i];
+          arr.splice(i - 1, 1);
         }
+      }
 
-        if (arr[i].endsWith("=")) {
-            arr[i] = arr[i].slice(0, -1);
-        }
+      if (arr[i].endsWith("=")) {
+        arr[i] = arr[i].slice(0, -1);
+      }
     }
 
     return arr;
